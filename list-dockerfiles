@@ -8,6 +8,7 @@ for dir in "${SCRIPT_DIRECTORY}/"*
 do
 	if [ -d "${dir}" ]
 	then
+		printf "  - "
 		basename "${dir}"
 	fi
 done
