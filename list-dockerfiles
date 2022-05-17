@@ -1,0 +1,15 @@
+#!/bin/bash
+
+SCRIPT_DIRECTORY=$(dirname $(realpath $0))
+
+echo "Available Dockerfiles:"
+
+for dir in "${SCRIPT_DIRECTORY}/"*
+do
+	if [ -d "${dir}" ]
+	then
+		printf "  - "
+		basename "${dir}"
+	fi
+done
+
