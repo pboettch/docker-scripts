@@ -15,9 +15,7 @@ WORKDIR=$(realpath $3)
 
 docker run -td \
 	--name $2 \
-	-v /home/pmp/data-btr/Work/yocto-downloads:/home/user/yocto-downloads \
-	-v /home/pmp/data-btr/Work/yocto-sstate-cache:/home/user/yocto-sstate-cache \
-	-v /home/pmp/.ssh:/home/user/.ssh \
+	-v $HOME/.ssh:/home/user/.ssh \
 	-v $WORKDIR:/home/user/work \
 	--net=host \
 	$1
