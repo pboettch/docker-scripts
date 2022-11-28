@@ -7,7 +7,7 @@ RUN yum -y install sudo git libpng make gcc gcc-c++ zlib-devel \
 	patch bzip2-devel sqlite-devel xorg-x11-server-Xvfb libpng12 \
 	libXrender libXi libXrandr libXcursor libXinerama libXft \
 	fontconfig freetype libxkbcommon-x11 xcb-util-keysyms xcb-util-image xcb-util-renderutil xcb-util-wm \
-	environment-modules libicu
+	environment-modules libicu mesa-dri-drivers
 
 RUN adduser --uid 1000 user
 RUN chown user.user /home/user
