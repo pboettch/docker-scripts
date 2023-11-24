@@ -12,6 +12,14 @@ RUN apt -y install gawk wget git-core diffstat unzip texinfo gcc-multilib \
 	 python3-pip zstd lz4 cpio ninja-build meson rsync \
      locales sudo
 
+RUN apt update && apt -y upgrade
+
+RUN apt -y install build-essential ccache ecj fastjar file g++ gawk gettext \
+	git java-propose-classpath libelf-dev libncurses5-dev libncursesw5-dev \
+	libssl-dev python python2.7-dev python3 unzip wget python3-distutils \
+	python3-setuptools rsync subversion swig time libffi-dev libtool xsltproc \
+	zlib1g-dev u-boot-tools nodejs node-gyp npm jq
+
 RUN adduser --disabled-password --gecos "User,,," --uid 1000 user
 RUN chown user.user /home/user
 
@@ -20,9 +28,6 @@ RUN locale-gen en_US en_US.UTF-8
 RUN echo "user ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
 
 RUN apt -y clean
-
-RUN pip install -U git+https://github.com/cpb-/yocto-cooker.git
-RUN pip install -U git+https://github.com/siemens/kas.git
 
 RUN apt update
 RUN apt -y upgrade

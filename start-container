@@ -27,6 +27,7 @@ docker exec -it \
 	-e LC_ALL=en_US.UTF-8 \
 	-e LANG=en_US.UTF-8 \
 	-e LANGUAGE=en_US.UTF-8 \
+	-w /home/user \
 	$@ \
 	$CONTAINER \
 	bash
